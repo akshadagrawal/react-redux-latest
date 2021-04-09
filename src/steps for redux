@@ -1,0 +1,11 @@
+wrap index.js under <Provider></Provider>
+create folder redux under it create configureStore file
+create a store in it
+then create ducks folder inside redux and create a file to store states
+
+
+
+
+//useeffect without any param means componentDidMount and runs with every change
+//useEffect with 1 array param means componentDidUpdate and runs onlu once if empty array and after every update if something is passed to that array and that var changes
+//useEfeect with return statement means componentUnmount
