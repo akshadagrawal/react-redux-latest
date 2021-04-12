@@ -1,6 +1,7 @@
 import {call, put} from 'redux-saga/effects';
 import { requestGetUser } from '../requests/user';
-import {setUser} from '../../ducks/user';
+//import {setUser} from '../../ducks/user';
+import {setUser} from '../../../redux-toolkit/userSlice'
 
 export default function* handleGetUser(action){
     try{

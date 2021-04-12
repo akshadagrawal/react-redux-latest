@@ -5,7 +5,9 @@ import Counter from './Counter';
 // import Todo from './Todo';
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect } from 'react';
-import { getUser } from './redux/ducks/user';
+//import { getUser } from './redux/ducks/user';
+import { getUser } from './redux-toolkit/userSlice';
+
 import Counter1 from './Counter1';
 
 
@@ -30,29 +32,29 @@ import Counter1 from './Counter1';
 //   },
 // ]
 function App() {
-  // const count=useSelector((state)=>state.counter.count);
+  const count=useSelector((state)=>state.counter.count);
 
 
 
-  // const dispatch=useDispatch()
+  const dispatch=useDispatch()
 
-  // useEffect(()=>{
-  //   dispatch(getUser());
-  // },[dispatch]);
+  useEffect(()=>{
+    dispatch(getUser());
+  },[dispatch]);
 
-  // const user= useSelector((state)=>state.user.user);
+  //const user= useSelector((state)=>state.user.user);
+  const {user}= useSelector((state)=>state.user);
 
-  // console.log(user);
+  console.log(user);
 
 
   return (
     <div className="App">
-      {/* {user && <h1>Hello {user.firstName}</h1>}
+       {user && <h1>Hello {user.firstName}</h1>}
      <p>The Count is: {count} </p>
 
-     { <Counter />} */
-     }
-    <Counter1/>
+     { <Counter />} 
+    {/* <Counter1/> */}
       {/* {empInfo.map(employee=>{
     //     return <Employee  key= {employee.empId} {...employee}/>  // {...iterable} spreading operator applied on any iterable or array its like {auto x} in c++
     //  })} */}
